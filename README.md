@@ -5,6 +5,27 @@ O mestre Avalon lê os valores das chaves SW, escreve-os na SDRAM em um endereç
 
 Input: 
   SW[7:0]
-  CLOCK_50
 
 Output: LEDS[7:0]
+
+##
+
+<b>Como simular no Modelsim:</b>
+
+Modificar o arquivo simulacao.do e adicionar o diretorio raiz da sua máquina:
+  - set QSYS_SIMDIR <seu-diretorio>
+  - Modificar essas quatros linhas do diretorio para o caminho raiz da sua máquina:
+
+vlog C:/Users/caios/Documents/laboratorio_integrado_IV/teste/TesteTB.v para vlog <seu-diretorio>
+
+vlog C:/Users/caios/Documents/laboratorio_integrado_IV/teste/Master_Interface.v para vlog <seu-diretorio>
+
+vlog C:/Users/caios/Documents/laboratorio_integrado_IV/teste/TesteBdf.v para vlog <seu-diretorio>
+
+vcom C:/Users/caios/Documents/laboratorio_integrado_IV/teste/pll.vhd para vcom <seu-diretorio>
+
+##
+<b>Após realizar essas mudanças, basta executar o macro no Modelsim a seguir:</b>
+
+  - msim_setup.tcl
+  - simulacao.do 
